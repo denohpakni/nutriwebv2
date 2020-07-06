@@ -1,0 +1,9 @@
+Django
+django-adminlte3
+django-bootstrap4
+django-gunicorn
+gunicorn
+pylint
+pytz
+six
+whitenoise
