@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import AddProductModel
+from .models import AddProductModel, PlaceOrderModel
 # from .models import PlaceOrderModel
 
 
@@ -9,7 +9,9 @@ class AddProductForm(ModelForm):
         fields = '__all__'
 
 
-# class PlaceOrderForm(ModelForm):
-#     class Meta:
-#         model = PlaceOrderModel
-#         fields = ['product_quantity']
+
+class updateStatusForm(ModelForm):
+    class Meta:
+        model = PlaceOrderModel
+        fields = ('product_status',)
+

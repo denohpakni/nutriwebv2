@@ -7,4 +7,3 @@ pylint
 pytz
 six
 whitenoise
-virtualenv

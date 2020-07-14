@@ -17,5 +17,5 @@ urlpatterns = [
     path('place-order/<int:id>', views.placeOrder, name='place-order'),
     path('show-product', views.showAvailableProd, name='show-product'),
     path('order-history', views.showOrderHistory, name='order-history'),
-    path('update-status', views.updateStatus, name='update-status'),
+    path('update-status/<int:id>', views.updateStatus, name='update-status'),
 ]

@@ -3,7 +3,7 @@ from django.contrib.auth.models import User, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from accounts.models import AddProductModel, PlaceOrderModel
-from accounts.forms import AddProductForm
+from accounts.forms import AddProductForm, updateStatusForm
 
 # Create your views here.
 def login(request):
@@ -154,7 +154,6 @@ def placeOrder(request, id):
     return render(request, 'place-order.html', context)
 
 
-
 def showOrderHistory(request):
     username = request.user
     orderDetail = PlaceOrderModel.objects.filter(order_by=username)
@@ -166,5 +165,5 @@ def showOrderHistory(request):
 
 def updateStatus(request):
     username = request.user
-    PlaceOrderModel.objects.filter(order_by=username).filter(product_status='Ordered').update(product_status='Completed')
+    PlaceOrderModel.objects.filter(order_by=username).filter(product_status='Ordered').update(product_status='Completed')    
     return HttpResponse("Status Updated")

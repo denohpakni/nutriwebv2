@@ -15,7 +15,7 @@
 
         <br>
         <br>
-
+<!-- ####################### User Info ############################## -->
         <h3> User Details </h3>
         <table class="table">
             <thead>
@@ -45,7 +45,7 @@
             {% endfor %}
             </tbody>
         </table>
-
+<!-- ####################### END of User Info ############################## -->
         <br>
         <br>
 
@@ -58,6 +58,8 @@
                 <th>Product Quantity</th>
                 <th>Product Status</th>
                 <th>Order By</th>
+                <th>chage status back</th>
+                <th>change status next</th>
             </tr>
             </thead>
             <tbody>
@@ -67,13 +69,12 @@
                 <td>{{ order.product_price }}</td>
                 <td>{{ order.product_quantity }}</td>
                 <td>{{ order.product_status }}</td>
-                <td>{{ order.order_by }}</td>
+                <td>{{ order.order_by }}</td>                
                 <td>
-                    <form method="POST" action="update-status">
-
-                        {% csrf_token %}
-                        <input type="submit" value="Move Forward">
-                    </form>
+                    <button type="button" class="btn btn-info px-3"><i class="far fa-hand-point-left" aria-hidden="true"></i></button>
+                </td>
+                <td>
+                    <button type="button" class="btn btn-warning px-3"><i class="far fa-hand-point-right" aria-hidden="true"></i></button>
                 </td>
             </tr>
             {% endfor %}
